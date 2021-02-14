@@ -1,4 +1,9 @@
-// Toggle.js
+//
+//	bball
+//	Toggle.js
+//
+//	© 2021 Blake Ball
+
 import React from 'react'
 import { func, string } from 'prop-types';
 import styled from 'styled-components';
@@ -30,12 +35,15 @@ const ToggleContainer = styled.button`
     
     // sun icon
     &:first-child {
-      transform: ${({ lightTheme }) => lightTheme ? 'translateY(0)' : 'translateY(100px)'};
+      transform: ${({ lightTheme }) => lightTheme ? 'translateX(0)' : 'translateX(-50px)'};
+      visibility: ${({ lightTheme }) => lightTheme ? 'visible' : 'hidden'}
     }
     
     // moon icon
     &:nth-child(2) {
-      transform: ${({ lightTheme }) => lightTheme ? 'translateY(-100px)' : 'translateY(0)'};
+      transform: ${({ lightTheme }) => lightTheme ? 'translateX(50px)' : 'translateS(0)'};
+      visibility: ${({ lightTheme }) => lightTheme ? 'hidden' : 'visible'}
+
     }
   }
 `;
@@ -44,8 +52,8 @@ const Toggle = ({ theme, toggleTheme }) => {
   const isLight = theme === 'light';
   return (
     <ToggleContainer lightTheme={isLight} onClick={toggleTheme} >
-      <SunIcon fill="#E2E2E2" />
-      <MoonIcon fill="#6B8096" />
+      <SunIcon fill="#fcfc97" />
+      <MoonIcon fill="#cfcfcf" />
     </ToggleContainer>
   );
 };

@@ -7,15 +7,29 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 
-// const Children = styled.span`
-// 	position: relative;
-// `;
+const StyledLink = styled(Link)`
+	text-decoration: none;
+	font-size: 20px;
+  letter-spacing: 1px;
+  margin: 0 10px;
+`;
+
+const StyledExternalink = StyledLink.withComponent('a');
 
 const NavItem = (props) => (
-  <Link className='navigation-bar-item' to={props.link}> {props.children}
-  </Link>
+
+  props.isExternal ?
+    <StyledExternalink
+      className="Text NavigationItem"
+      href={props.link}
+      target="_blank">
+      {props.children}
+    </StyledExternalink> :
+    <StyledLink className='Text NavigationItem' to={props.link}> {props.children}
+    </StyledLink>
 )
 
 export default NavItem;
