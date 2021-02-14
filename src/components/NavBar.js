@@ -15,22 +15,23 @@ const NavigationBarContainer = styled.div`
 	justify-content: space-between;
 	height: 70px;
 	padding: 0px 20px;
+	position: fixed;
 	width: 100%;
 `;
 
 const NavigationBarTitle = styled.span`
-	text-transform: uppercase;
-	font-size: 20px;
+	font-size: 40px;
+	font-weight: 600;
 	letter-spacing: 1px;
 	color: white;
 `;
 
 
 const NavBar = (props) => (
-  <NavigationBarContainer className="Header">
-    <NavigationBarTitle className="Text">Blake Ball</NavigationBarTitle>
-    <NavItems />
-  </NavigationBarContainer>
+	<NavigationBarContainer className="Header">
+		<NavigationBarTitle className="Text">Blake Ball</NavigationBarTitle>
+		<NavItems />
+	</NavigationBarContainer>
 );
 
 export default NavBar;

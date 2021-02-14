@@ -6,7 +6,7 @@
 //
 
 import React, { useState, useEffect } from 'react';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
 import './App.css';
 import { lightTheme, darkTheme } from './theme';
@@ -14,6 +14,10 @@ import { GlobalStyles } from './global';
 import ToggleContainer from './components/Toggle';
 import NavBar from './components/NavBar';
 import useDebounce from './use-debounce';
+
+const BodyContainer = styled.div`
+  margin-top: 70px;
+`
 
 function App() {
   // State and setter for search term
@@ -47,7 +51,7 @@ function App() {
 
   // API search function
   function searchCharacters(search) {
-    const apiKey = '***';
+    const apiKey = '32c4325af0004b3d34161730098834a8';
     const queryString = `apikey=${apiKey}&titleStartsWith=${search}`;
     return fetch(
       `https://gateway.marvel.com/v1/public/comics?${queryString}`,
@@ -90,7 +94,7 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <NavBar />
-      <div>
+      <BodyContainer className="BodyContainer">
         <input
           placeholder="Search Marvel Comics"
           onChange={e => setSearchTerm(e.target.value)}
@@ -111,7 +115,7 @@ function App() {
         <GlobalStyles />
         <ToggleContainer theme={theme} toggleTheme={toggleTheme}>It's too bright in here</ToggleContainer>
         <h1>Such clarity.</h1>
-      </div>
+      </BodyContainer>
     </ThemeProvider>
   );
 }

@@ -16,34 +16,43 @@ const ToggleContainer = styled.button`
   :focus {outline:0 !important;}
   background: ${({ theme }) => theme.gradient};
   border: 2px solid ${({ theme }) => theme.toggleBorder};
-  border-radius: 30px;
+  border-radius: 40px;
   cursor: pointer;
   display: flex;
+  align-items: center;
   font-size: 0.5rem;
   justify-content: space-between;
   margin: 0 auto;
   overflow: hidden;
   padding: 0.5rem;
   position: relative;
-  width: 8rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 2rem;
 
   svg {
     height: auto;
-    width: 2.5rem;
+    width: 1rem;
     transition: all 0.3s linear;
     
     // sun icon
     &:first-child {
       transform: ${({ lightTheme }) => lightTheme ? 'translateX(0)' : 'translateX(-50px)'};
-      visibility: ${({ lightTheme }) => lightTheme ? 'visible' : 'hidden'}
+      visibility: ${({ lightTheme }) => lightTheme ? 'visible' : 'hidden'};
     }
     
     // moon icon
     &:nth-child(2) {
-      transform: ${({ lightTheme }) => lightTheme ? 'translateX(50px)' : 'translateS(0)'};
-      visibility: ${({ lightTheme }) => lightTheme ? 'hidden' : 'visible'}
+      transform: ${({ lightTheme }) => lightTheme ? 'translateX(50px)' : 'translateX(0)'};
+      visibility: ${({ lightTheme }) => lightTheme ? 'hidden' : 'visible'};
 
+    }
+  }
+  @keyframes arc {
+    0%{
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100%{
+      transform: translate(-50%, -50%) rotate(180deg);
     }
   }
 `;

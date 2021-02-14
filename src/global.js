@@ -1,7 +1,7 @@
 
 //
 //	bball
-// global.js
+//  global.js
 //
 //	© 2021 Blake Ball
 
@@ -22,7 +22,7 @@ export const GlobalStyles = createGlobalStyle`
     height: 100vh;
     margin: 0;
     padding: 0;
-    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: Montserrat-Medium, BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     transition: all 0.25s linear;
   }
   
@@ -32,4 +32,9 @@ export const GlobalStyles = createGlobalStyle`
   
   .Text {
     color: ${({ theme }) => theme.text};
+    font-family: FiraCode, BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .NavigationItem {
+    font-family: FiraCode, BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }`

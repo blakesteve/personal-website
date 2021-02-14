@@ -12,7 +12,7 @@ import styled from 'styled-components';
 
 const StyledLink = styled(Link)`
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 14px;
   letter-spacing: 1px;
   margin: 0 10px;
 `;
