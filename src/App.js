@@ -7,19 +7,33 @@
 
 import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 
 import './App.css';
 import { lightTheme, darkTheme } from './theme';
 import { GlobalStyles } from './global';
 import ToggleContainer from './components/Toggle';
 import NavBar from './components/NavBar';
+import About from './components/About';
+import Work from './components/Work';
 import useDebounce from './use-debounce';
 
 const BodyContainer = styled.div`
   margin-top: 70px;
+  padding: 10px 10%;
 `
 
 function App() {
+
+  // const for now, but if auth is introduced switch to let 
+  const routes = (
+    <Switch>
+      <Route path="/work" render={props => <Work {...props} />} />
+      <Route path="/" component={About} />
+      <Redirect to="/" />
+    </Switch>
+  )
+
   // State and setter for search term
   const [searchTerm, setSearchTerm] = useState('');
   // State and setter for search results
@@ -51,7 +65,7 @@ function App() {
 
   // API search function
   function searchCharacters(search) {
-    const apiKey = '32c4325af0004b3d34161730098834a8';
+    const apiKey = '***';
     const queryString = `apikey=${apiKey}&titleStartsWith=${search}`;
     return fetch(
       `https://gateway.marvel.com/v1/public/comics?${queryString}`,
@@ -95,7 +109,7 @@ function App() {
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <NavBar />
       <BodyContainer className="BodyContainer">
-        <input
+        {/* <input
           placeholder="Search Marvel Comics"
           onChange={e => setSearchTerm(e.target.value)}
         />
@@ -111,10 +125,10 @@ function App() {
                 }`}
             />
           </div>
-        ))}
+        ))} */}
         <GlobalStyles />
-        <ToggleContainer theme={theme} toggleTheme={toggleTheme}>It's too bright in here</ToggleContainer>
-        <h1>Such clarity.</h1>
+        <ToggleContainer theme={theme} toggleTheme={toggleTheme} />
+        {routes}
       </BodyContainer>
     </ThemeProvider>
   );
