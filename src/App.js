@@ -29,7 +29,8 @@ function App() {
   const routes = (
     <Switch>
       <Route path="/work" render={props => <Work {...props} />} />
-      <Route path="/" component={About} />
+      <Route exact path="/" component={About} />
+      <Route path="/about" component={About} />
       <Redirect to="/" />
     </Switch>
   )
@@ -42,7 +43,7 @@ function App() {
   const [isSearching, setIsSearching] = useState(false);
 
   // State for site theme
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
   // The function that toggles between themes
   const toggleTheme = () => {
@@ -134,4 +135,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);

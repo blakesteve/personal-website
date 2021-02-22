@@ -6,11 +6,11 @@
 //
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
 	text-decoration: none;
 	font-size: 14px;
   letter-spacing: 1px;
@@ -18,6 +18,7 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledExternalink = StyledLink.withComponent('a');
+
 
 const NavItem = (props) => (
 
@@ -28,7 +29,9 @@ const NavItem = (props) => (
       target="_blank">
       {props.children}
     </StyledExternalink> :
-    <StyledLink className='Text NavigationItem' to={props.link}> {props.children}
+    <StyledLink
+      className='Text NavigationItem'
+      to={props.link}> {props.children}
     </StyledLink>
 )
 

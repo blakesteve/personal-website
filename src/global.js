@@ -29,12 +29,20 @@ export const GlobalStyles = createGlobalStyle`
   .Header {
     background: ${({ theme }) => theme.header};
   }
-  
+
   .Text {
     color: ${({ theme }) => theme.text};
     font-family: FiraCode, BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
 
+  .active {
+    color: ${({ theme }) => theme.active};
+  }
+
   .NavigationItem {
     font-family: FiraCode, BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  .NavigationItem:hover {
+    color: ${({ theme }) => theme.active};
   }`
