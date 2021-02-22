@@ -15,6 +15,7 @@ import { GlobalStyles } from './global';
 import ToggleContainer from './components/Toggle';
 import NavBar from './components/NavBar';
 import About from './components/About';
+import Home from './components/Home';
 import Work from './components/Work';
 import useDebounce from './use-debounce';
 
@@ -29,7 +30,7 @@ function App() {
   const routes = (
     <Switch>
       <Route path="/work" render={props => <Work {...props} />} />
-      <Route exact path="/" component={About} />
+      <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Redirect to="/" />
     </Switch>

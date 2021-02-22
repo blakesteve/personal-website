@@ -6,6 +6,8 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 
 import NavItems from './NavItems';
 import Doggo from '../assets/pupper.png';
@@ -27,9 +29,10 @@ const NavigationBarTitle = styled.span`
 	margin-left: 1rem;
 `;
 
-const NavigationBarTitleContainer = styled.div`
+const NavigationBarTitleContainer = styled(Link)`
 	display: flex;
 	justify-content: flex-start;
+	text-decoration: none;
 `;
 
 const Logo = styled.img`
@@ -40,7 +43,7 @@ const Logo = styled.img`
 
 const NavBar = (props) => (
 	<NavigationBarContainer className="Header">
-		<NavigationBarTitleContainer>
+		<NavigationBarTitleContainer to="/">
 			<Logo src={Doggo} />
 			<NavigationBarTitle className="Text">Blake Ball</NavigationBarTitle>
 		</NavigationBarTitleContainer>
