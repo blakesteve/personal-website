@@ -109,7 +109,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <NavBar />
+      <NavBar theme={theme === 'light' ? 'lightTheme' : 'darkTheme'} />
       <BodyContainer className="BodyContainer">
         {/* <input
           placeholder="Search Marvel Comics"
