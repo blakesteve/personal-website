@@ -45,6 +45,7 @@ export const GlobalStyles = createGlobalStyle`
   
   .NavigationItem:hover {
     color: ${({ theme }) => theme.active};
+    transition: all .4s ease;
   }
   
   

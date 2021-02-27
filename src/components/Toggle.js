@@ -61,8 +61,8 @@ const Toggle = ({ theme, toggleTheme }) => {
   const isLight = theme === 'light';
   return (
     <ToggleContainer lightTheme={isLight} onClick={toggleTheme} >
-      <SunIcon fill="#fcfc97" />
-      <MoonIcon fill="#cfcfcf" />
+      <SunIcon fill="#363537" />
+      <MoonIcon fill="#7dd56f" />
     </ToggleContainer>
   );
 };

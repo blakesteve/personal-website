@@ -11,6 +11,7 @@ const AboutContainer = styled.div`
 `;
 
 const BlakePhoto = styled.img`
+  border-radius: 5px;
   width: 300px;
   height: 300px;
   `;
@@ -20,7 +21,7 @@ const StyledH1 = styled.h1`
 `
 
 const StyledP = styled.p`
-  max-width: 80%;
+  max-width: 95%;
 `;
 
 function About() {

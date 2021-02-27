@@ -12,6 +12,7 @@ import Particles from 'react-particles-js';
 
 import NavItems from './NavItems';
 import Doggo from '../assets/pupper.png';
+import DoggoAlt from '../assets/pupper-alt.png';
 
 const NavigationBarContainer = styled.div`
 	display: flex;
@@ -103,7 +104,7 @@ const NavBar = (props) => (
 		{props.theme === "darkTheme" ? <StyledParticles params={ParticlesParams} /> : null}
 		<NavigationBarContainer className="Header">
 			<NavigationBarTitleContainer to="/">
-				<Logo src={Doggo} />
+				<Logo src={props.theme === "darkTheme" ? Doggo : DoggoAlt} />
 				<NavigationBarTitle className="Text">Blake</NavigationBarTitle>
 			</NavigationBarTitleContainer>
 			<NavItems />

@@ -25,9 +25,9 @@ const BodyContainer = styled.div`
 `
 
 const ToggleContainerContainer = styled.div`
-  position: absolute;
-  top: 5px;
-  right: 5px;
+  position: fixed;
+  top: 15px;
+  right: 15px;
 `
 
 function App() {

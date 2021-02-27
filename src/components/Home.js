@@ -15,9 +15,9 @@ function Home() {
   return (
     <HomeGreetingContainer>
       <h1>Hi, hello!</h1>
-      <h1> I'm
+      <h1> I'm&nbsp;
         <BlakeContainer to="/about">
-          <span className="spin-n-shine"><span>B</span><span>l</span><span>a</span><span>k</span><span>e</span></span>
+          <span className="spin-n-shine"><span> B</span><span>l</span><span>a</span><span>k</span><span>e</span></span>
         </BlakeContainer>. I'm a front end web developer based in Austin, TX.
       </h1>
     </HomeGreetingContainer>
