@@ -24,6 +24,12 @@ const BodyContainer = styled.div`
   padding: 10px 10%;
 `
 
+const ToggleContainerContainer = styled.div`
+  position: absolute;
+  top: 5px;
+  right: 5px;
+`
+
 function App() {
 
   // const for now, but if auth is introduced switch to let 
@@ -129,7 +135,9 @@ function App() {
           </div>
         ))} */}
         <GlobalStyles />
-        <ToggleContainer theme={theme} toggleTheme={toggleTheme} />
+        <ToggleContainerContainer>
+          <ToggleContainer theme={theme} toggleTheme={toggleTheme} />
+        </ToggleContainerContainer>
         {routes}
       </BodyContainer>
     </ThemeProvider>

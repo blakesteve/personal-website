@@ -59,6 +59,9 @@ const ParticlesParams = {
 				"value_area": 1500
 			}
 		},
+		"color": {
+			"value": ["#7DD56F", "#FFFFFF"]
+		},
 		"line_linked": {
 			"enable": true,
 			"opacity": 0.02
@@ -101,7 +104,7 @@ const NavBar = (props) => (
 		<NavigationBarContainer className="Header">
 			<NavigationBarTitleContainer to="/">
 				<Logo src={Doggo} />
-				<NavigationBarTitle className="Text">Blake Ball</NavigationBarTitle>
+				<NavigationBarTitle className="Text">Blake</NavigationBarTitle>
 			</NavigationBarTitleContainer>
 			<NavItems />
 		</NavigationBarContainer >
