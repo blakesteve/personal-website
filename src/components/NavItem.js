@@ -1,6 +1,6 @@
 //
 //	bball
-//	App.js
+//	NavItem.js
 //
 //	© 2021 Blake Ball
 //

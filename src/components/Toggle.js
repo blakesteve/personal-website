@@ -14,7 +14,7 @@ import { ReactComponent as SunIcon } from '../assets/sun.svg';
 
 const ToggleContainer = styled.button`
   :focus {outline:0 !important;}
-  background: ${({ theme }) => theme.gradient};
+  background: ${({ theme }) => theme.toggleBackground};
   border: 2px solid ${({ theme }) => theme.toggleBorder};
   border-radius: 40px;
   cursor: pointer;

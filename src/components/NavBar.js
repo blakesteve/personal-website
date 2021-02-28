@@ -7,8 +7,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Particles from 'react-particles-js';
-
 
 import NavItems from './NavItems';
 import Doggo from '../assets/pupper.png';
@@ -37,75 +35,23 @@ const NavigationBarTitleContainer = styled(Link)`
 	text-decoration: none;
 `;
 
-const StyledParticles = styled(Particles)`
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-`;
-
-
 const Logo = styled.img`
 	height: 50px;
 	border-radius: 5px;
 `;
 
-const ParticlesParams = {
-	"particles": {
-		"number": {
-			"value": 60,
-			"density": {
-				"enable": true,
-				"value_area": 1500
-			}
-		},
-		"color": {
-			"value": ["#7DD56F", "#FFFFFF"]
-		},
-		"line_linked": {
-			"enable": true,
-			"opacity": 0.02
-		},
-		"move": {
-			"direction": "right",
-			"speed": 0.05
-		},
-		"size": {
-			"value": 1
-		},
-		"opacity": {
-			"anim": {
-				"enable": true,
-				"speed": 1,
-				"opacity_min": 0.05
-			}
-		}
-	},
-	"interactivity": {
-		"events": {
-			"onclick": {
-				"enable": true,
-				"mode": "push"
-			}
-		},
-		"modes": {
-			"push": {
-				"particles_nb": 1
-			}
-		}
-	},
-	"retina_detect": true
-}
 
 
 const NavBar = (props) => (
 	<>
-		{props.theme === "darkTheme" ? <StyledParticles params={ParticlesParams} /> : null}
+		{/* {props.theme === "darkTheme" ? <StyledParticles params={ParticlesParams} /> : null} */}
 		<NavigationBarContainer className="Header">
 			<NavigationBarTitleContainer to="/">
 				<Logo src={props.theme === "darkTheme" ? Doggo : DoggoAlt} />
-				<NavigationBarTitle className="Text">Blake</NavigationBarTitle>
+				<NavigationBarTitle className="Text spin-n-shine">
+					<span>B</span><span>l</span><span>a</span><span>k<span></span>e</span>
+					<span>B</span><span>.</span><span>d</span><span>e</span><span>v</span>
+				</NavigationBarTitle>
 			</NavigationBarTitleContainer>
 			<NavItems />
 		</NavigationBarContainer >

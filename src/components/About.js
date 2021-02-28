@@ -1,3 +1,9 @@
+//
+//	bball
+//	About.js
+//
+//	© 2021 Blake Ball
+
 import React from 'react';
 import styled from 'styled-components';
 

@@ -8,6 +8,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
+import Particles from 'react-particles-js';
 
 import './App.css';
 import { lightTheme, darkTheme } from './theme';
@@ -30,6 +31,63 @@ const ToggleContainerContainer = styled.div`
   right: 15px;
 `
 
+const StyledParticles = styled(Particles)`
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+  height: 100%;
+  z-index: -1;
+`;
+
+const ParticlesParams = {
+  "particles": {
+    "number": {
+      "value": 60,
+      "density": {
+        "enable": true,
+        "value_area": 1500
+      }
+    },
+    "color": {
+      "value": ["#7DD56F", "#FFFFFF"]
+    },
+    "line_linked": {
+      "enable": true,
+      "opacity": 0.02
+    },
+    "move": {
+      "direction": "right",
+      "speed": 0.05
+    },
+    "size": {
+      "value": 1
+    },
+    "opacity": {
+      "anim": {
+        "enable": true,
+        "speed": 1,
+        "opacity_min": 0.05
+      }
+    }
+  },
+  "interactivity": {
+    "events": {
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      }
+    },
+    "modes": {
+      "push": {
+        "particles_nb": 1
+      }
+    }
+  },
+  "retina_detect": true
+}
+
+
 function App() {
 
   // const for now, but if auth is introduced switch to let 
@@ -42,22 +100,16 @@ function App() {
     </Switch>
   )
 
-  // State and setter for search term
+  // State and setters
   const [searchTerm, setSearchTerm] = useState('');
-  // State and setter for search results
   const [results, setResults] = useState([]);
-  // State for search status (whether there is a pending API request)
   const [isSearching, setIsSearching] = useState(false);
-
-  // State for site theme
   const [theme, setTheme] = useState('light');
 
   // The function that toggles between themes
   const toggleTheme = () => {
-    // if the theme is not light, then set it to dark
     if (theme === 'light') {
       setTheme('dark');
-      // otherwise, it should be light
     } else {
       setTheme('light');
     }
@@ -115,6 +167,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+
       <NavBar theme={theme === 'light' ? 'lightTheme' : 'darkTheme'} />
       <BodyContainer className="BodyContainer">
         {/* <input
@@ -139,6 +192,7 @@ function App() {
           <ToggleContainer theme={theme} toggleTheme={toggleTheme} />
         </ToggleContainerContainer>
         {routes}
+        {theme === "dark" ? <StyledParticles params={ParticlesParams} /> : null}
       </BodyContainer>
     </ThemeProvider>
   );
