@@ -5,7 +5,7 @@
 //	© 2021 Blake Ball
 //
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import Particles from 'react-particles-js';
@@ -18,7 +18,7 @@ import NavBar from './components/NavBar';
 import About from './components/About';
 import Home from './components/Home';
 import Work from './components/Work';
-import useDebounce from './use-debounce';
+// import useDebounce from './use-debounce';
 
 const BodyContainer = styled.div`
   margin-top: 70px;
