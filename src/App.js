@@ -101,9 +101,9 @@ function App() {
   )
 
   // State and setters
-  const [searchTerm, setSearchTerm] = useState('');
-  const [results, setResults] = useState([]);
-  const [isSearching, setIsSearching] = useState(false);
+  // const [searchTerm, setSearchTerm] = useState('');
+  // const [results, setResults] = useState([]);
+  // const [isSearching, setIsSearching] = useState(false);
   const [theme, setTheme] = useState('light');
 
   // The function that toggles between themes
@@ -121,49 +121,49 @@ function App() {
   // Otherwise, it will return the previous value of searchTerm.
   // The goal is to only have the API call fire when user stops typing ...
   // ... so that we aren't hitting our API rapidly.
-  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+  // const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
   // API search function
-  function searchCharacters(search) {
-    const apiKey = '***';
-    const queryString = `apikey=${apiKey}&titleStartsWith=${search}`;
-    return fetch(
-      `https://gateway.marvel.com/v1/public/comics?${queryString}`,
-      {
-        method: 'GET'
-      }
-    )
-      .then(r => r.json())
-      .then(r => r.data.results)
-      .catch(error => {
-        console.error(error);
-        return [];
-      });
-  }
+  // function searchCharacters(search) {
+  //   const apiKey = '***';
+  //   const queryString = `apikey=${apiKey}&titleStartsWith=${search}`;
+  //   return fetch(
+  //     `https://gateway.marvel.com/v1/public/comics?${queryString}`,
+  //     {
+  //       method: 'GET'
+  //     }
+  //   )
+  //     .then(r => r.json())
+  //     .then(r => r.data.results)
+  //     .catch(error => {
+  //       console.error(error);
+  //       return [];
+  //     });
+  // }
 
-  useEffect(
-    () => {
-      // Make sure we have a value (user has entered something in input)
-      if (debouncedSearchTerm) {
-        // Set isSearching state
-        setIsSearching(true);
-        // Fire off our API call
-        searchCharacters(debouncedSearchTerm).then(results => {
-          // Set back to false since request finished
-          setIsSearching(false);
-          // Set results state
-          setResults(results);
-        });
-      } else {
-        setResults([]);
-      }
-    },
-    // This is the useEffect input array
-    // Our useEffect function will only execute if this value changes ...
-    // ... and thanks to our hook it will only change if the original ...
-    // value (searchTerm) hasn't changed for more than 500ms.
-    [debouncedSearchTerm]
-  );
+  // useEffect(
+  //   () => {
+  //     // Make sure we have a value (user has entered something in input)
+  //     if (debouncedSearchTerm) {
+  //       // Set isSearching state
+  //       setIsSearching(true);
+  //       // Fire off our API call
+  //       searchCharacters(debouncedSearchTerm).then(results => {
+  //         // Set back to false since request finished
+  //         setIsSearching(false);
+  //         // Set results state
+  //         setResults(results);
+  //       });
+  //     } else {
+  //       setResults([]);
+  //     }
+  //   },
+  //   // This is the useEffect input array
+  //   // Our useEffect function will only execute if this value changes ...
+  //   // ... and thanks to our hook it will only change if the original ...
+  //   // value (searchTerm) hasn't changed for more than 500ms.
+  //   [debouncedSearchTerm]
+  // );
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
