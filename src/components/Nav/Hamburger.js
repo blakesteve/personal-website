@@ -51,7 +51,6 @@ const Hamburger = (props) => {
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => {
-    console.log('YOU DID IT!');
     setOpen(!open);
   }
 
