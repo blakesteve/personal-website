@@ -14,12 +14,25 @@ const AboutContainer = styled.div`
   justify-content: space-between;
   margin-top: 3rem;
   width: 100%;
+
+  @media (max-width: 950px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+  }
+
 `;
 
 const BlakePhoto = styled.img`
   border-radius: 5px;
   width: 300px;
   height: 300px;
+
+  @media (max-width: 950px) {
+    height: auto;
+    width: 100%;
+  }
   `;
 
 const StyledH1 = styled.h1`
@@ -36,7 +49,7 @@ function About() {
       <div>
         <StyledH1> Howdy!</StyledH1>
         <StyledP>I'm a front end web developer with over ten years of experience based in Austin, TX. I specialize in modern technologies such as React, Angular, Node, and GraphQL.</StyledP>
-        <StyledP>I also enjoy hiking, photography, carpentry, drawing, making music, and am passionate about dogs. I am absolutely fascinated by fungus and the mycelial networks ubiquitous in our world.</StyledP>
+        <StyledP>I also enjoy hiking, photography, carpentry, drawing, making (and consuming) music, and am passionate about dogs. I am absolutely fascinated by fungus and the mycelial networks ubiquitous in our world.</StyledP>
       </div>
       <BlakePhoto src={Blake} />
     </AboutContainer>
