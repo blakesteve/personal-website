@@ -8,9 +8,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import NavItems from './NavItems';
-import Doggo from '../assets/pupper.png';
-import DoggoAlt from '../assets/pupper-alt.png';
+import Doggo from '../../assets/pupper.png';
+import DoggoAlt from '../../assets/pupper-alt.png';
+import Hamburger from './Hamburger';
 
 const NavigationBarContainer = styled.div`
 	display: flex;
@@ -22,17 +22,34 @@ const NavigationBarContainer = styled.div`
 	width: 100%;
 `;
 
+const NavigationBarTitleContainer = styled(Link)`
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	text-decoration: none;
+`;
+
 const NavigationBarTitle = styled.span`
 	font-size: 40px;
 	font-weight: 600;
 	letter-spacing: 1px;
 	margin-left: 1rem;
-`;
+	
+	@media (max-width: 1090px) {
+    font-size: 30px;
+	}
+	
+	@media (max-width: 1020px) {
+		font-size: 25px;
+	}
 
-const NavigationBarTitleContainer = styled(Link)`
-	display: flex;
-	justify-content: flex-start;
-	text-decoration: none;
+	@media (max-width: 980px) {
+		font-size: 21px;
+	}
+
+	@media (max-width: 800px) {
+		display: none;
+	}
 `;
 
 const Logo = styled.img`
@@ -53,7 +70,7 @@ const NavBar = (props) => (
 					<span>B</span><span>.</span><span>d</span><span>e</span><span>v</span>
 				</NavigationBarTitle>
 			</NavigationBarTitleContainer>
-			<NavItems />
+			<Hamburger theme={props.theme} />
 		</NavigationBarContainer >
 	</>
 );

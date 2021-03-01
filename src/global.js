@@ -24,6 +24,22 @@ export const GlobalStyles = createGlobalStyle`
     font-family: Montserrat-Medium, BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     transition: all 0.25s linear;
   }
+
+  h1 {
+    font-size: 4rem;
+
+    @media (max-width: 1020px) {
+      font-size: 3rem;
+    }
+
+    @media (max-width: 950px) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 800px) {
+      font-size: 2rem;
+    }
+  }
   
   .Header {
     background: ${({ theme }) => theme.header};
@@ -51,7 +67,6 @@ export const GlobalStyles = createGlobalStyle`
   /* Spin n Shine */
 .spin-n-shine {
 	overflow: hidden;
-	padding: 0 0 10px;
 }
 
 .spin-n-shine::before {

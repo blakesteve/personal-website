@@ -34,7 +34,7 @@ function About() {
   return (
     <AboutContainer>
       <div>
-        <StyledH1> Hi, hello!</StyledH1>
+        <StyledH1> Howdy!</StyledH1>
         <StyledP>I'm a front end web developer with over ten years of experience based in Austin, TX. I specialize in modern technologies such as React, Angular, Node, and GraphQL.</StyledP>
         <StyledP>I also enjoy hiking, photography, carpentry, drawing, making music, and am passionate about dogs. I am absolutely fascinated by fungus and the mycelial networks ubiquitous in our world.</StyledP>
       </div>

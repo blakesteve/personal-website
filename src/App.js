@@ -14,7 +14,7 @@ import './App.css';
 import { lightTheme, darkTheme } from './theme';
 import { GlobalStyles } from './global';
 import ToggleContainer from './components/Toggle';
-import NavBar from './components/NavBar';
+import NavBar from './components/Nav/NavBar';
 import About from './components/About';
 import Home from './components/Home';
 import Work from './components/Work';
@@ -29,6 +29,10 @@ const ToggleContainerContainer = styled.div`
   position: fixed;
   top: 15px;
   right: 15px;
+
+  @media (max-width: 950px) {
+    right: 60px;
+  }
 `
 
 const StyledParticles = styled(Particles)`

@@ -15,6 +15,11 @@ const StyledLink = styled(NavLink)`
 	font-size: 14px;
   letter-spacing: 1px;
   margin: 0 10px;
+
+  @media (max-width: 950px) {
+    font-size: 25px;
+    margin: .1rem 0;
+  }
 `;
 
 const StyledExternalink = StyledLink.withComponent('a');
