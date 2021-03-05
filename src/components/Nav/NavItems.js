@@ -8,6 +8,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import NavItem from './NavItem';
+import Resume from '../../assets/Blake_Ball_Resume_Q1_2021.pdf';
+
 
 const StyledUl = styled.ul`
   list-style: none;
@@ -38,7 +40,7 @@ const NavItems = ({ open, clicked, theme }) => (
   <StyledUl open={open} theme={theme} className='NavItems'>
     <NavItem link="/about" exact ><span onClick={clicked}>.about()</span></NavItem>
     <NavItem onClick={clicked} link="/work"><span onClick={clicked}>.work()</span></NavItem>
-    <NavItem link="/resume"><span onClick={clicked}>.resume()</span></NavItem>
+    <NavItem isExternal link="/Blake_Ball_Resume_Q1_2021.pdf"><span onClick={clicked}>.resume()</span></NavItem>
     <NavItem isExternal link="https://github.com/blakesteve"><span onClick={clicked}>.gitHub()</span></NavItem>
     <NavItem isExternal link="https://www.linkedin.com/in/blake-ball-35845845/"><span onClick={clicked}>.linkedIn()</span></NavItem>
     {/* { !props.isAuthenticated
