@@ -16,6 +16,12 @@ const BlakeContainer = styled(Link)`
     display: none;
   }
 `
+const StyledH1 = styled.h1`
+
+  @media (max-width: 950px) {
+    margin-top: 0;
+  }
+`
 
 const BlakeMobileContainer = styled(Link)`
   color: #7DD56F;
@@ -34,7 +40,7 @@ const HomeGreetingContainer = styled.div`
 function Home() {
   return (
     <HomeGreetingContainer>
-      <h1>Hi, hello!</h1>
+      <StyledH1>Hi, hello!</StyledH1>
       <h1> I'm&nbsp;
         <BlakeContainer to="/about">
           <span className="spin-n-shine"><span> B</span><span>l</span><span>a</span><span>k</span><span>e</span></span>

@@ -19,6 +19,7 @@ const AboutContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-top: 0;
     flex-flow: column nowrap;
   }
 
