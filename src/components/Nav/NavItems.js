@@ -8,8 +8,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import NavItem from './NavItem';
-import Resume from '../../assets/Blake_Ball_Resume_Q1_2021.pdf';
-
 
 const StyledUl = styled.ul`
   list-style: none;
