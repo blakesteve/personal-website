@@ -57,8 +57,6 @@ const Logo = styled.img`
 	border-radius: 5px;
 `;
 
-
-
 const NavBar = (props) => (
 	<>
 		{/* {props.theme === "darkTheme" ? <StyledParticles params={ParticlesParams} /> : null} */}
