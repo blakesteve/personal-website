@@ -36,15 +36,19 @@ const NavigationBarTitle = styled.span`
 	margin-left: 1rem;
 	
 	@media (max-width: 1090px) {
-    font-size: 30px;
+    font-size: 27px;
 	}
 	
 	@media (max-width: 1020px) {
-		font-size: 25px;
+		font-size: 24px;
+	}
+
+	@media (max-width: 990px) {
+		font-size: 22px;
 	}
 
 	@media (max-width: 980px) {
-		font-size: 21px;
+		font-size: 19px;
 	}
 
 	@media (max-width: 800px) {
@@ -59,7 +63,6 @@ const Logo = styled.img`
 
 const NavBar = (props) => (
 	<>
-		{/* {props.theme === "darkTheme" ? <StyledParticles params={ParticlesParams} /> : null} */}
 		<NavigationBarContainer className="Header">
 			<NavigationBarTitleContainer to="/">
 				<Logo src={props.theme === "darkTheme" ? Doggo : DoggoAlt} />

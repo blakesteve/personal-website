@@ -6,6 +6,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import Blake from '../assets/images/blake-pedernales.jpg';
 
@@ -38,11 +39,16 @@ const BlakePhoto = styled.img`
 
 const StyledH1 = styled.h1`
   margin-top: 0;
-`
+`;
 
 const StyledP = styled.p`
   max-width: 95%;
 `;
+
+const StyledLink = styled.a`
+  color: #7DD56F;
+  text-decoration: none;
+`
 
 function About() {
   return (
@@ -51,9 +57,10 @@ function About() {
         <StyledH1> Howdy!</StyledH1>
         <StyledP>I'm a front end web developer with over ten years of experience based in Austin, TX. I specialize in modern technologies such as React, Angular, Node, and GraphQL.</StyledP>
         <StyledP>I also enjoy hiking, photography, carpentry, drawing, making (and consuming) music, and am passionate about dogs. I am absolutely fascinated by fungus and the mycelial networks ubiquitous in our world.</StyledP>
+        <StyledP>My <StyledLink href="/Blake_Ball_Resume_Q1_2021.pdf" target="_blank">résumé</StyledLink> is in PDF format and opens in a new tab.</StyledP>
       </div>
       <BlakePhoto src={Blake} />
-    </AboutContainer>
+    </AboutContainer >
   )
 }
 
