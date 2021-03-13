@@ -7,6 +7,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { FiExternalLink } from "react-icons/fi";
+import { HiExternalLink } from "react-icons/hi";
+import { DiGithubAlt, DiReact, DiNodejsSmall, DiJavascript1 } from "react-icons/di";
+import { AiFillLinkedin } from "react-icons/ai";
+import { IoIosPaw } from "react-icons/io";
 
 const StyledUl = styled.ul`
   list-style: none;
@@ -54,6 +59,11 @@ const HoverArg1 = styled.span`
   font-size: 0rem;
   margin-left: -4px;
   transition: all .5s;
+  
+  & > svg {
+    vertical-align: middle;
+  }
+  
   ${StyledLink}:hover & {
     opacity: 1;
     font-size: 14px;
@@ -69,6 +79,7 @@ const HoverArg2 = styled(HoverArg1)`
   margin-left: 0;
   margin-right: -4px;
   transition: all .9s;
+  
   ${StyledLink}:hover & {
     opacity: 1;
     font-size: 14px;
@@ -84,24 +95,24 @@ const HoverArg2 = styled(HoverArg1)`
 const NavItems = ({ open, clicked, theme }) => (
   <StyledUl open={open} theme={theme} className='NavItems'>
     <StyledLink className='Text NavigationItem' to="/about" exact >
-      <span onClick={clicked}>.about(<HoverArg1>skills,</HoverArg1> <HoverArg2>résumé</HoverArg2>)</span>
+      <span onClick={clicked}>.about(<HoverArg1><DiJavascript1 /></HoverArg1> <HoverArg2><IoIosPaw /></HoverArg2>)</span>
     </StyledLink>
     <StyledLink className='Text NavigationItem' onClick={clicked} to="/work">
-      <span onClick={clicked}>.work(<HoverArg1>projects,</HoverArg1> <HoverArg2>WIP</HoverArg2>)</span>
+      <span onClick={clicked}>.work(<HoverArg1><DiReact /></HoverArg1> <HoverArg2><DiNodejsSmall /></HoverArg2>)</span>
     </StyledLink>
     <StyledExternalink
       className="Text NavigationItem"
       href="https://github.com/blakesteve"
       target="_blank"
     >
-      <span onClick={clicked}>.gitHub(<HoverArg1>green,</HoverArg1> <HoverArg2>squares</HoverArg2>)</span>
+      <span onClick={clicked}>.gitHub(<HoverArg1><DiGithubAlt /></HoverArg1> <HoverArg2><FiExternalLink /></HoverArg2>)</span>
     </StyledExternalink>
     <StyledExternalink
       className="Text NavigationItem"
       href="https://www.linkedin.com/in/blake-ball-35845845/"
       target="_blank"
     >
-      <span onClick={clicked}>.linkedIn(<HoverArg1>xp,</HoverArg1> <HoverArg2>new tab</HoverArg2>)</span>
+      <span onClick={clicked}>.linkedIn(<HoverArg1><AiFillLinkedin /></HoverArg1> <HoverArg2><HiExternalLink /></HoverArg2>)</span>
     </StyledExternalink>
     {/* { !props.isAuthenticated
       ? <NavItem link="/auth">Authenticate</NavItem>
