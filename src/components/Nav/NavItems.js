@@ -84,18 +84,11 @@ const HoverArg2 = styled(HoverArg1)`
 const NavItems = ({ open, clicked, theme }) => (
   <StyledUl open={open} theme={theme} className='NavItems'>
     <StyledLink className='Text NavigationItem' to="/about" exact >
-      <span onClick={clicked}>.about(<HoverArg1>skills,</HoverArg1> <HoverArg2>hobbies</HoverArg2>)</span>
+      <span onClick={clicked}>.about(<HoverArg1>skills,</HoverArg1> <HoverArg2>résumé</HoverArg2>)</span>
     </StyledLink>
     <StyledLink className='Text NavigationItem' onClick={clicked} to="/work">
       <span onClick={clicked}>.work(<HoverArg1>projects,</HoverArg1> <HoverArg2>WIP</HoverArg2>)</span>
     </StyledLink>
-    <StyledExternalink
-      className="Text NavigationItem"
-      href="/Blake_Ball_Resume_Q1_2021.pdf"
-      target="_blank"
-    >
-      <span onClick={clicked}>.resume(<HoverArg1>pdf,</HoverArg1> <HoverArg2>new tab</HoverArg2>)</span>
-    </StyledExternalink>
     <StyledExternalink
       className="Text NavigationItem"
       href="https://github.com/blakesteve"
