@@ -50,11 +50,6 @@ const StyledLink = styled(NavLink)`
 const StyledExternalink = StyledLink.withComponent('a');
 
 
-const StyledItem = styled(NavItem)`
-  color: blue;
-  opacity: 0;
-`
-
 const HoverArg1 = styled.span`
   opacity: 0;
   letter-spacing: 0;
@@ -65,6 +60,12 @@ const HoverArg1 = styled.span`
     opacity: 1;
     font-size: 14px;
     margin: 0;
+  }
+  ${StyledExternalink}:hover & {
+    opacity: 1;
+    font-size: 14px;
+    margin: 0;
+  }
 `
 const HoverArg2 = styled(HoverArg1)`
   margin-left: 0;
@@ -74,16 +75,43 @@ const HoverArg2 = styled(HoverArg1)`
     opacity: 1;
     font-size: 14px;
     margin: 0;
+  }
+  ${StyledExternalink}:hover & {
+    opacity: 1;
+    font-size: 14px;
+    margin: 0;
+  }
 `
 
 const NavItems = ({ open, clicked, theme }) => (
   <StyledUl open={open} theme={theme} className='NavItems'>
     <StyledLink className='Text NavigationItem' to="/about" exact >
-      <span onClick={clicked}>.about(<HoverArg1>nice,</HoverArg1> <HoverArg2>clean</HoverArg2>)</span></StyledLink>
-    <NavItem onClick={clicked} link="/work"><span onClick={clicked}>.work()</span></NavItem>
-    <NavItem isExternal link="/Blake_Ball_Resume_Q1_2021.pdf"><span onClick={clicked}>.resume()</span></NavItem>
-    <NavItem isExternal link="https://github.com/blakesteve"><span onClick={clicked}>.gitHub()</span></NavItem>
-    <NavItem isExternal link="https://www.linkedin.com/in/blake-ball-35845845/"><span onClick={clicked}>.linkedIn()</span></NavItem>
+      <span onClick={clicked}>.about(<HoverArg1>skills,</HoverArg1> <HoverArg2>hobbies</HoverArg2>)</span>
+    </StyledLink>
+    <StyledLink className='Text NavigationItem' onClick={clicked} to="/work">
+      <span onClick={clicked}>.work(<HoverArg1>projects,</HoverArg1> <HoverArg2>WIP</HoverArg2>)</span>
+    </StyledLink>
+    <StyledExternalink
+      className="Text NavigationItem"
+      href="/Blake_Ball_Resume_Q1_2021.pdf"
+      target="_blank"
+    >
+      <span onClick={clicked}>.resume(<HoverArg1>pdf,</HoverArg1> <HoverArg2>new tab</HoverArg2>)</span>
+    </StyledExternalink>
+    <StyledExternalink
+      className="Text NavigationItem"
+      href="https://github.com/blakesteve"
+      target="_blank"
+    >
+      <span onClick={clicked}>.gitHub(<HoverArg1>green,</HoverArg1> <HoverArg2>squares</HoverArg2>)</span>
+    </StyledExternalink>
+    <StyledExternalink
+      className="Text NavigationItem"
+      href="https://www.linkedin.com/in/blake-ball-35845845/"
+      target="_blank"
+    >
+      <span onClick={clicked}>.linkedIn(<HoverArg1>xp,</HoverArg1> <HoverArg2>new tab</HoverArg2>)</span>
+    </StyledExternalink>
     {/* { !props.isAuthenticated
       ? <NavItem link="/auth">Authenticate</NavItem>
       : <NavItem link="/logout">Logout</NavItem>
