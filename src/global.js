@@ -27,6 +27,7 @@ export const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-size: 4rem;
+    font-weight: 600;
 
     @media (max-width: 1020px) {
       font-size: 3rem;
