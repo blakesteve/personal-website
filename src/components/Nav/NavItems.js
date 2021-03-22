@@ -94,30 +94,28 @@ const HoverArg2 = styled(HoverArg1)`
 
 const NavItems = ({ open, clicked, theme }) => (
   <StyledUl open={open} theme={theme} className='NavItems'>
-    <StyledLink className='Text NavigationItem' to="/about" exact >
-      <span onClick={clicked}>.about(<HoverArg1><DiJavascript1 /></HoverArg1> <HoverArg2><IoIosPaw /></HoverArg2>)</span>
+    <StyledLink onClick={clicked} className='Text NavigationItem' to="/about" exact >
+      .about(<HoverArg1><DiJavascript1 /></HoverArg1> <HoverArg2><IoIosPaw /></HoverArg2>)
     </StyledLink>
-    <StyledLink className='Text NavigationItem' onClick={clicked} to="/work">
-      <span onClick={clicked}>.work(<HoverArg1><DiReact /></HoverArg1> <HoverArg2><DiNodejsSmall /></HoverArg2>)</span>
+    <StyledLink onClick={clicked} className='Text NavigationItem' to="/work">
+      .work(<HoverArg1><DiReact /></HoverArg1> <HoverArg2><DiNodejsSmall /></HoverArg2>)
     </StyledLink>
     <StyledExternalink
+      onClick={clicked}
       className="Text NavigationItem"
       href="https://github.com/blakesteve"
       target="_blank"
     >
-      <span onClick={clicked}>.gitHub(<HoverArg1><DiGithubAlt /></HoverArg1> <HoverArg2><FiExternalLink /></HoverArg2>)</span>
+      .gitHub(<HoverArg1><DiGithubAlt /></HoverArg1> <HoverArg2><FiExternalLink /></HoverArg2>)
     </StyledExternalink>
     <StyledExternalink
+      onClick={clicked}
       className="Text NavigationItem"
       href="https://www.linkedin.com/in/blake-ball-35845845/"
       target="_blank"
     >
-      <span onClick={clicked}>.linkedIn(<HoverArg1><AiFillLinkedin /></HoverArg1> <HoverArg2><HiExternalLink /></HoverArg2>)</span>
+      .linkedIn(<HoverArg1><AiFillLinkedin /></HoverArg1> <HoverArg2><HiExternalLink /></HoverArg2>)
     </StyledExternalink>
-    {/* { !props.isAuthenticated
-      ? <NavItem link="/auth">Authenticate</NavItem>
-      : <NavItem link="/logout">Logout</NavItem>
-    } */}
   </StyledUl>
 );
 
