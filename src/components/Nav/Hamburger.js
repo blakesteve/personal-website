@@ -1,12 +1,14 @@
 //
-//	bball
-//	Hamburger.js
+//  bball
+//  Hamburger.js
 //
-//	© 2021 Blake Ball
+//  © 2021 Blake Ball
 //
 
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
 import NavItems from './NavItems';
 
 const StyledHamburger = styled.div`
@@ -27,43 +29,48 @@ const StyledHamburger = styled.div`
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ theme }) => theme === "darkTheme" ? '#FAFAFA' : '#24292e'};
+    background-color: ${({ theme }) => (theme === 'darkTheme' ? '#FAFAFA' : '#24292e')};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;
 
     &:nth-child(1) {
-      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+      transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
     }
 
     &:nth-child(2) {
-      transform: ${({ open }) => open ? 'translateX(100%)' : 'translateX(0)'};
-      opacity: ${({ open }) => open ? 0 : 1};
+      transform: ${({ open }) => (open ? 'translateX(100%)' : 'translateX(0)')};
+      opacity: ${({ open }) => (open ? 0 : 1)};
     }
 
     &:nth-child(3) {
-      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+      transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
 `;
 
 const Hamburger = (props) => {
   const [open, setOpen] = useState(false);
+  const { theme } = props;
 
   const toggleOpen = () => {
     setOpen(!open);
-  }
+  };
 
   return (
     <>
-      <StyledHamburger open={open} theme={props.theme} onClick={() => setOpen(!open)}>
+      <StyledHamburger open={open} theme={theme} onClick={() => setOpen(!open)}>
         <div />
         <div />
         <div />
       </StyledHamburger>
-      <NavItems open={open} clicked={toggleOpen} theme={props.theme} />
+      <NavItems open={open} clicked={toggleOpen} theme={theme} />
     </>
-  )
+  );
+};
+
+Hamburger.propTypes = {
+  theme: PropTypes.string.isRequired,
 };
 
 export default Hamburger;

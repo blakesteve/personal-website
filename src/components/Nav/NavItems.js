@@ -1,17 +1,20 @@
 //
-//	bball
-//	NavItems.js
+//  bball
+//  NavItems.js
 //
-//	© 2021 Blake Ball
+//  © 2021 Blake Ball
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { FiExternalLink } from "react-icons/fi";
-import { HiExternalLink } from "react-icons/hi";
-import { DiGithubAlt, DiReact, DiNodejsSmall, DiJavascript1 } from "react-icons/di";
-import { AiFillLinkedin } from "react-icons/ai";
-import { IoIosPaw } from "react-icons/io";
+import PropTypes from 'prop-types';
+import { FiExternalLink } from 'react-icons/fi';
+import { HiExternalLink } from 'react-icons/hi';
+import {
+  DiGithubAlt, DiReact, DiNodejsSmall, DiJavascript1,
+} from 'react-icons/di';
+import { AiFillLinkedin } from 'react-icons/ai';
+import { IoIosPaw } from 'react-icons/io';
 
 const StyledUl = styled.ul`
   list-style: none;
@@ -24,9 +27,9 @@ const StyledUl = styled.ul`
 
   @media (max-width: 950px) {
     flex-flow: column nowrap;
-    background-color: ${({ theme }) => theme === "darkTheme" ? "#24292e" : "#7dd56f"};
+    background-color: ${({ theme }) => (theme === 'darkTheme' ? '#24292e' : '#7dd56f')};
     position: fixed;
-    transform: ${ ({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
     top: 0;
     right: 0;
     height: 100vh;
@@ -39,8 +42,8 @@ const StyledUl = styled.ul`
 `;
 
 const StyledLink = styled(NavLink)`
-	text-decoration: none;
-	font-size: 14px;
+  text-decoration: none;
+  font-size: 14px;
   letter-spacing: 1px;
   margin: 0 10px;
 
@@ -51,7 +54,6 @@ const StyledLink = styled(NavLink)`
 `;
 
 const StyledExternalink = StyledLink.withComponent('a');
-
 
 const HoverArg1 = styled.span`
   opacity: 0;
@@ -74,7 +76,8 @@ const HoverArg1 = styled.span`
     font-size: 14px;
     margin: 0;
   }
-`
+`;
+
 const HoverArg2 = styled(HoverArg1)`
   margin-left: 0;
   margin-right: -4px;
@@ -90,15 +93,27 @@ const HoverArg2 = styled(HoverArg1)`
     font-size: 14px;
     margin: 0;
   }
-`
+`;
 
 const NavItems = ({ open, clicked, theme }) => (
-  <StyledUl open={open} theme={theme} className='NavItems'>
-    <StyledLink onClick={clicked} className='Text NavigationItem' to="/about" exact >
-      .about(<HoverArg1><DiJavascript1 /></HoverArg1> <HoverArg2><IoIosPaw /></HoverArg2>)
+  <StyledUl open={open} theme={theme} className="NavItems">
+    <StyledLink onClick={clicked} className="Text NavigationItem" to="/about" exact>
+      .about(
+      <HoverArg1>
+        <DiJavascript1 />
+      </HoverArg1>
+      {' '}
+      <HoverArg2>
+        <IoIosPaw />
+      </HoverArg2>
+      )
     </StyledLink>
-    <StyledLink onClick={clicked} className='Text NavigationItem' to="/work">
-      .work(<HoverArg1><DiReact /></HoverArg1> <HoverArg2><DiNodejsSmall /></HoverArg2>)
+    <StyledLink onClick={clicked} className="Text NavigationItem" to="/work">
+      .work(
+      <HoverArg1><DiReact /></HoverArg1>
+      {' '}
+      <HoverArg2><DiNodejsSmall /></HoverArg2>
+      )
     </StyledLink>
     <StyledExternalink
       onClick={clicked}
@@ -106,7 +121,11 @@ const NavItems = ({ open, clicked, theme }) => (
       href="https://github.com/blakesteve"
       target="_blank"
     >
-      .gitHub(<HoverArg1><DiGithubAlt /></HoverArg1> <HoverArg2><FiExternalLink /></HoverArg2>)
+      .gitHub(
+      <HoverArg1><DiGithubAlt /></HoverArg1>
+      {' '}
+      <HoverArg2><FiExternalLink /></HoverArg2>
+      )
     </StyledExternalink>
     <StyledExternalink
       onClick={clicked}
@@ -114,9 +133,19 @@ const NavItems = ({ open, clicked, theme }) => (
       href="https://www.linkedin.com/in/blake-ball-35845845/"
       target="_blank"
     >
-      .linkedIn(<HoverArg1><AiFillLinkedin /></HoverArg1> <HoverArg2><HiExternalLink /></HoverArg2>)
+      .linkedIn(
+      <HoverArg1><AiFillLinkedin /></HoverArg1>
+      {' '}
+      <HoverArg2><HiExternalLink /></HoverArg2>
+      )
     </StyledExternalink>
   </StyledUl>
 );
+
+NavItems.propTypes = {
+  open: PropTypes.bool.isRequired,
+  clicked: PropTypes.func.isRequired,
+  theme: PropTypes.string.isRequired,
+};
 
 export default NavItems;

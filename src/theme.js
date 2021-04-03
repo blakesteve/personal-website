@@ -1,8 +1,8 @@
 //
-//	bball
+//  bball
 //  theme.js
 //
-//	© 2021 Blake Ball
+//  © 2021 Blake Ball
 
 export const lightTheme = {
   header: '#7dd56f',
@@ -11,7 +11,7 @@ export const lightTheme = {
   active: '#FFFFFF',
   toggleBorder: '#363537',
   toggleBackground: '#E2E2E2',
-}
+};
 
 export const darkTheme = {
   header: '#24292e',
@@ -20,4 +20,4 @@ export const darkTheme = {
   active: '#7dd56f',
   toggleBorder: '#7dd56f',
   toggleBackground: '#363537',
-}
+};
