@@ -12,7 +12,6 @@ import Blake from '../assets/images/blake-pedernales.jpg';
 const AboutContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 3rem;
   width: 100%;
 
   @media (max-width: 950px) {
@@ -26,6 +25,7 @@ const AboutContainer = styled.div`
 
 const BlakePhoto = styled.img`
   border-radius: 5px;
+  margin-top: 1rem;
   width: 300px;
   height: 300px;
 
@@ -36,7 +36,7 @@ const BlakePhoto = styled.img`
 `;
 
 const StyledH1 = styled.h1`
-  margin-top: 0;
+  margin: 0;
 `;
 
 const StyledP = styled.p`
