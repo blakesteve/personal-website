@@ -29,6 +29,9 @@ const StyledCard = styled.div`
   display: flex;
   justify-content: flex-start;
   margin: 2rem 0;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 
 const PreviewPhoto = styled.img`
@@ -36,13 +39,17 @@ const PreviewPhoto = styled.img`
   border-radius: 5px;
   width: 320px;
   height: 200px;
-  @media (max-width: 950px) {
+  @media (max-width: 700px) {
     height: auto;
+    width: 100%;
   }
 `;
 
 const StyledBlurb = styled.div`
   margin-left: 1rem;
+  @media (max-width: 700px) {
+    margin-left: 0;
+  }
 `;
 
 const StyledH1 = styled.h1`
