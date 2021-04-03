@@ -1,10 +1,10 @@
 //
-//	bball
-//	Toggle.js
+//  bball
+//  Toggle.js
 //
-//	© 2021 Blake Ball
+//  © 2021 Blake Ball
 
-import React from 'react'
+import React from 'react';
 import { func, string } from 'prop-types';
 import styled from 'styled-components';
 
@@ -36,14 +36,14 @@ const ToggleContainer = styled.button`
     
     // sun icon
     &:first-child {
-      transform: ${({ lightTheme }) => lightTheme ? 'translateX(0)' : 'translateX(-50px)'};
-      visibility: ${({ lightTheme }) => lightTheme ? 'visible' : 'hidden'};
+      transform: ${({ lightTheme }) => (lightTheme ? 'translateX(0)' : 'translateX(-50px)')};
+      visibility: ${({ lightTheme }) => (lightTheme ? 'visible' : 'hidden')};
     }
     
     // moon icon
     &:nth-child(2) {
-      transform: ${({ lightTheme }) => lightTheme ? 'translateX(50px)' : 'translateX(0)'};
-      visibility: ${({ lightTheme }) => lightTheme ? 'hidden' : 'visible'};
+      transform: ${({ lightTheme }) => (lightTheme ? 'translateX(50px)' : 'translateX(0)')};
+      visibility: ${({ lightTheme }) => (lightTheme ? 'hidden' : 'visible')};
 
     }
   }
@@ -60,7 +60,7 @@ const ToggleContainer = styled.button`
 const Toggle = ({ theme, toggleTheme }) => {
   const isLight = theme === 'light';
   return (
-    <ToggleContainer lightTheme={isLight} onClick={toggleTheme} >
+    <ToggleContainer lightTheme={isLight} onClick={toggleTheme}>
       <SunIcon fill="#363537" />
       <MoonIcon fill="#7dd56f" />
     </ToggleContainer>
@@ -70,6 +70,6 @@ const Toggle = ({ theme, toggleTheme }) => {
 Toggle.propTypes = {
   theme: string.isRequired,
   toggleTheme: func.isRequired,
-}
+};
 
 export default Toggle;
